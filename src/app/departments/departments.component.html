@@ -1,0 +1,8 @@
+<div *ngIf="department" (click)="handleDeptClick($event)">
+    <p><i class="fa fa-folder" aria-hidden="true"></i>{{ department?.DepartmentName || "Dept name not found" }}</p>
+</div>
+<ul *ngIf="showChildren || level == 0">
+    <li *ngFor="let department of DepartmentTree.get(level)">
+        <app-departments [level]="department.DepartmentID" [department]="department"></app-departments>
+    </li>
+</ul>

@@ -1,0 +1,35 @@
+<div>
+    <h2>{{title}}</h2>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Task</th>
+                <th>Status</th>
+                <th>Employee Name</th>
+                <th>Department ID</th>
+                <th>Due Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let task of filterTaskList" [ngClass]="{task_expired: task.DueDate < today}">
+                <td>{{task.taskNumber}}</td>
+                <td>{{task.taskName}} </td>
+                <td>{{task.statusID}} </td>
+                <td>{{task.employeeName}} </td>
+                <td>{{task.departmentID}} </td>
+                <td>{{task.DueDate| date:'d/M/yyyy, h:mm a'}} </td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- <div class="d-flex justify-content-between p-2">
+        <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="refreshCountries()">
+        </ngb-pagination>
+      
+        <select class="custom-select" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="refreshCountries()">
+          <option [ngValue]="2">2 items per page</option>
+          <option [ngValue]="4">4 items per page</option>
+          <option [ngValue]="6">6 items per page</option>
+        </select>
+      </div> -->
+</div>

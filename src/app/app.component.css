@@ -1,0 +1,25 @@
+.container{
+    width: 60%;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "tasks person"
+      "tasks departments"
+}
+
+app-tasks {
+    grid-area: tasks;
+}
+
+app-workers {
+    grid-area: person;
+}
+
+app-departments {
+    grid-area: departments;
+}
+
+.container p{
+    border: 1px solid black;
+}

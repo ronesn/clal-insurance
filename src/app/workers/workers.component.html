@@ -1,0 +1,12 @@
+<div>
+    <div *ngIf="workerList != null">
+        חפש עובד:
+        <ng-select [(ngModel)]="selected" (change)="getValues()">
+            <ng-option *ngFor="let item of workerList" [value]="item.EmployeeName">
+                <img src="./assets/{{item.EmployeePicture}}" width="20px" height="20px" />
+                {{item.EmployeeName  }}
+            </ng-option>
+         </ng-select>
+
+    </div>
+</div>
